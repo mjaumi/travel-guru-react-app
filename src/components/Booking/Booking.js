@@ -1,8 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Booking = () => {
     const { destination } = useParams();
+    const navigate = useNavigate();
 
     return (
         <section className='bg-home-bg min-h-screen bg-cover bg-center bg-black/50 bg-blend-multiply pt-28'>
@@ -31,7 +32,7 @@ const Booking = () => {
                                 <input className='bg-gray-100 px-4 py-3 font-bold rounded-sm w-full' type="date" name='to' />
                             </div>
                         </div>
-                        <button className='mt-5 bg-base-yellow w-full py-3 rounded-lg text-black font-medium hover:opacity-60 duration-300'>Start Booking</button>
+                        <button onClick={() => navigate('/search')} className='mt-5 bg-base-yellow w-full py-3 rounded-lg text-black font-medium hover:opacity-60 duration-300'>Start Booking</button>
                     </form>
                 </div>
             </div>
